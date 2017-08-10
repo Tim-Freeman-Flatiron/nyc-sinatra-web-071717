@@ -1,0 +1,19 @@
+<ul>
+	<% @landmarks.each do |landmark| %>
+		<li>
+		<h1><%=landmark.name%></h1>
+		<% if landmark.figure_id %>
+			<h3>This landmark belongs to <%=landmark.figure.name%></h3>
+			<% else %>
+			<h3>This landmark doesn't belong to any figures</h3>
+		<% end %>
+		<% if landmark.year_completed %>
+			<h3>This landmark was completed in <%=landmark.year_completed%></h3>
+			<% else %>
+			<h3>No completion date available</h3>
+		</li>
+		<% end %>
+
+	<% end %>
+
+</ul>

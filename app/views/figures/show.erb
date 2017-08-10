@@ -1,0 +1,20 @@
+<h1><%=@figure.name%></h1>
+
+<% if @figure.titles %>
+	<h3>Titles:</h3>
+	<% @figure.titles.each do |title| %>
+		<h3><%=title.name%></h3>
+	<% end %>
+	<% else %>
+	<p>No titles available for <%=@figure.name%></p>
+<% end %>
+
+<% if @figure.landmarks %>
+	<h3>Landmarks:</h3>
+	<% @figure.landmarks.each do |landmark| %>
+		<h3><%=landmark.name%></h3>
+	<% end %>
+	<% else %>
+	<p><%=@figure.name%> has no associated landmarks.</p>
+<% end %>
+

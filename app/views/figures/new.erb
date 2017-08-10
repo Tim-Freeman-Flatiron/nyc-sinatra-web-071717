@@ -5,27 +5,28 @@
 
 	<p>Choose a landmark for your figure:</p>
 	<% @landmarks.each do |landmark| %>
-		<% if !landmark.figure_id %>
-	<input type="checkbox" name="figure[landmark_ids][]" value="<%=landmark.id%>" id="<%landmark.id%>"><%=landmark.name%></input>
-		<% end %>
+		
+		
+	<input type="checkbox" name="figure[landmark_ids][]" value="<%=landmark.id%>" id="landmark_<%=landmark.id%>"><%=landmark.name%></input>
+		
 	<% end %>
 
 
 	<p>...and/or create a new landmark for your figure:</p>
 	<label>New Landmark:</label>
-	<input type="text" name="landmark[name]" id="landmark_name">
+	<input type="text" name="landmark[name]" id="new_landmark">
 
 
 
 	<p>Choose a title for your figure:</p>
 	<% @titles.each do |title| %>
-	<input type="checkbox" name="figure[title_ids][]" value="<%=title.id%>" id="<%=title.id%>"><%=title.name%></input>
+	<input type="checkbox" name="figure[title_ids][]" value="<%=title.id%>" id="title_<%=title.id%>"><%=title.name%></input>
 	<% end %>
 
 
 	<p>...and/or create a new title for your figure:</p>
 	<label>New Title:</label>
-	<input type="text" name="title[name]" id="title_name">
+	<input type="text" name="title[name]" id="new_title">
 
 
 	<input type="submit" name="submit" id="submit" value="Create New Figure">
